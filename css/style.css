@@ -16,7 +16,6 @@ body {
 	background-color: #2e3247;
 	font-family: "Raleway", Helvetica, Arial, sans-serif;
 	font-size: 1.8rem;
-	line-height: 160%;
 	font-weight: 300;
 	overflow-z: hidden;
 }
@@ -34,13 +33,13 @@ h4,
 h5,
 h6 {
 	margin: 0;
-	padding: 10px;
+	padding: 0;
 	font-family: "Raleway", Helvetica, Arial, sans-serif;
 }
 
 p {
 	font-weight: 100;
-	font-size: 0.8em;
+	font-size: 0.7em;
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;
 	font-family: sans-serif;
@@ -90,14 +89,6 @@ section {
 	align-items: center;
 	justify-content: center;
 }
-
-/* section h2 {
-	color: white;
-	background: rgba(0, 0, 0, 0.3);
-
-	padding: 16px;
-	border-radius: 3px;
-} */
 
 @media screen and (min-width: 600px) {
 	.header {
@@ -177,10 +168,9 @@ footer {
 	align-items: left;
 	flex-direction: row;
 	max-width: 500px;
-	/* background: rgba(60, 62, 81, 0.2); */
 	margin: 20px 20px;
 	color: white;
-	padding: 16px;
+	padding: 20px;
 	border: rgba(60, 62, 81, 0.1);
 	border-radius: 5px;
 	background-image: linear-gradient(
