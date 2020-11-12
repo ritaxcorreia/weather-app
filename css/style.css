@@ -34,8 +34,16 @@ h4,
 h5,
 h6 {
 	margin: 0;
-	padding: 0;
+	padding: 10px;
 	font-family: "Raleway", Helvetica, Arial, sans-serif;
+}
+
+p {
+	font-weight: 100;
+	font-size: 0.8em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	font-family: sans-serif;
 }
 
 img {
@@ -165,6 +173,7 @@ footer {
 
 .weather-card {
 	display: flex;
+	text-align: left;
 	align-items: left;
 	flex-direction: row;
 	max-width: 500px;
@@ -175,7 +184,7 @@ footer {
 	border: rgba(60, 62, 81, 0.1);
 	border-radius: 5px;
 	background-image: linear-gradient(
-		rgba(156, 158, 176, 0.05),
+		rgba(156, 158, 176, 0.01),
 		rgba(36, 15, 65, 0.4)
 	);
 	backdrop-filter: blur(5px);
