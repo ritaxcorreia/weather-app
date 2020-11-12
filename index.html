@@ -12,19 +12,24 @@
 </head>
 
 <body>
-    <section id="home" class="header">
+    <main>
+        <section id="home" class="header">
 
-        <div id="icon"></div>
-        <h2>The current temperature in <span id="temp"></span>.</h2>
+            <div>
+                <input type="text" name="city" value="" placeholder="  Enter City" id="city">
+                <input type="submit" value="Get weather" id="getTemp">
+            </div>
 
-        <input type="text" name="city" value="" placeholder=" Enter City" id="city">
-        <strong>Or</strong>
-        <input type="text" name="postcode" value="" placeholder=" Enter UK Postcode" id="postcode">
-        <input type="submit" value="Get weather" id="getTemp">
+            <div class="weather-card">
 
+                <div id="icon"></div>
+                <h2 class="display-weather">The current temperature in <span id="temp"></span>.</h2>
 
-    </section>
+            </div>
 
+        </section>
+    </main>
+    <footer><a href="https://ritacorreia.co">Rita Correia &copy; 2020</a></footer>
 
     <script src="js/main.js"></script>
 
