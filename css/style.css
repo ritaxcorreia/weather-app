@@ -168,12 +168,15 @@ footer {
 	align-items: left;
 	flex-direction: row;
 	max-width: 500px;
-	background: rgba(60, 62, 81, 0.2);
-	backdrop-filter: blur(5px);
-
+	/* background: rgba(60, 62, 81, 0.2); */
 	margin: 20px 20px;
 	color: white;
 	padding: 16px;
-	border: rgba(60, 62, 81, 0.1) solid 1px;
+	border: rgba(60, 62, 81, 0.1);
 	border-radius: 5px;
+	background-image: linear-gradient(
+		rgba(156, 158, 176, 0.05),
+		rgba(36, 15, 65, 0.4)
+	);
+	backdrop-filter: blur(5px);
 }
