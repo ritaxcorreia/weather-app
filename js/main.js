@@ -8,7 +8,7 @@ const icon = document.querySelector("#icon");
 
 //API URL
 const weatherUrl =
-	"http://api.openweathermap.org/data/2.5/weather?q=London&appid=1680f86f99f9722f2e92efbfac0afa4a";
+	"https://api.openweathermap.org/data/2.5/weather?q=London&appid=1680f86f99f9722f2e92efbfac0afa4a";
 
 // Shows temperature in DOM
 function showTemp(data) {
@@ -91,7 +91,7 @@ fetch(weatherUrl)
 getTemp.addEventListener("click", function () {
 	const cityText = cityInputField.value;
 
-	const cityWeather = `http://api.openweathermap.org/data/2.5/weather?q=${cityText}&appid=1680f86f99f9722f2e92efbfac0afa4a`;
+	const cityWeather = `https://api.openweathermap.org/data/2.5/weather?q=${cityText}&appid=1680f86f99f9722f2e92efbfac0afa4a`;
 
 	fetch(cityWeather)
 		.then((response) => {
