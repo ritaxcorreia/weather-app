@@ -11,8 +11,24 @@ const weatherUrl =
 	"http://api.openweathermap.org/data/2.5/weather?q=London&appid=1680f86f99f9722f2e92efbfac0afa4a";
 
 // Shows temperature in DOM
-function showTemp(city, tempC, tempF) {
-	tempSpan.textContent = `${city} is ${tempC}°C / ${tempF}°F`;
+function showTemp(
+	city,
+	tempC,
+	tempF,
+	feelsLikeCelsius,
+	feelsLikeFahrenheit,
+	clouds,
+	typeOfClouds,
+	humidity,
+	visibility
+) {
+	tempSpan.innerHTML = `<h2>${city}</h2>
+    <h3>${tempC}°C / ${tempF}°F</h3>
+        <p>Feels like ${feelsLikeCelsius}°C / ${feelsLikeFahrenheit}°F</p>
+        <p>${clouds}, ${typeOfClouds}</p>
+        <p>Humidity: ${humidity}%</p>
+        <p>Visibility: ${visibility}km</p>
+        `;
 }
 
 // Data fetch from OpenWeatherMap API
@@ -33,6 +49,15 @@ fetch(weatherUrl)
 		const degCelsius = (degFahrenheitInteger - 32) / 1.8;
 		const degCelsiusInteger = Math.floor(degCelsius);
 
+		const feelsLikeFahrenheit = Math.floor(
+			(data.main.feels_like - 273.15) * 1.8 + 32
+		);
+		const feelsLikeCelsius = Math.floor((feelsLikeFahrenheit - 32) / 1.8);
+		const clouds = data.weather[0].main;
+		const typeOfClouds = data.weather[0].description;
+		const humidity = data.main.humidity;
+		const visibility = data.visibility / 1000;
+
 		console.log(
 			`Temperature for ${data.name} in Kelvin: ${data.main.temp}°K`
 		);
@@ -43,7 +68,13 @@ fetch(weatherUrl)
 			`Temperature for ${data.name} in Celsius: ${degCelsiusInteger}°C`
 		);
 
-		tempSpan.textContent = `London is ${degCelsiusInteger}°C / ${degFahrenheitInteger}°F`;
+		tempSpan.innerHTML = `<h2>London</h2>
+        <h3>${degCelsiusInteger}°C / ${degFahrenheitInteger}°F</h3>
+        <p>Feels like ${feelsLikeCelsius}°C / ${feelsLikeFahrenheit}°F</p>
+        <p>${clouds}, ${typeOfClouds}</p>
+        <p>Humidity: ${humidity}%</p>
+        <p>Visibility: ${visibility}km</p>
+        `;
 
 		openWeatherIcon(data);
 	});
@@ -71,6 +102,14 @@ getTemp.addEventListener("click", function () {
 			const degCelsius = (degFahrenheitInteger - 32) / 1.8;
 			const degCelsiusInteger = Math.floor(degCelsius);
 
+			const feelsLikeCelsius = Math.floor(
+				(feelsLikeFahrenheit - 32) / 1.8
+			);
+			const clouds = data.weather[0].main;
+			const typeOfClouds = data.weather[0].description;
+			const humidity = data.main.humidity;
+			const visibility = data.visibility / 1000;
+
 			console.log(
 				`Temperature for ${cityText} in Fahrenheit: ${degFahrenheitInteger}°F`
 			);
@@ -78,7 +117,30 @@ getTemp.addEventListener("click", function () {
 				`Temperature for ${cityText} in Celsius: ${degCelsiusInteger}°C`
 			);
 
-			showTemp(data.name, degCelsiusInteger, degFahrenheitInteger);
+			showTemp(
+				data.name,
+				tempC,
+				tempF,
+				feelsLikeCelsius,
+				feelsLikeFahrenheit,
+				clouds,
+				typeOfClouds,
+				humidity,
+				visibility
+			);
+			// clouds,
+			// typeOfClouds,
+			// humidity,
+			// visibility );
+			// city,
+			// tempC,
+			// tempF,
+			// feelsLikeCelsius,
+			// feelsLikeFahrenheit,
+			// clouds,
+			// typeOfClouds,
+			// humidity,
+			// visibility
 
 			//shows weather icon
 			openWeatherIcon(data);
