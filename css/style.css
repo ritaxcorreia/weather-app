@@ -1,5 +1,5 @@
 html {
-	font-size: 62.5%;
+	font-size: 60%;
 	box-sizing: border-box;
 }
 
@@ -12,12 +12,13 @@ html {
 body {
 	margin: 0;
 	padding: 0;
-	color: #000;
-	background-color: black;
+	color: black;
+	background-color: #2e3247;
 	font-family: "Raleway", Helvetica, Arial, sans-serif;
 	font-size: 1.8rem;
 	line-height: 160%;
 	font-weight: 300;
+	overflow-z: hidden;
 }
 
 .container {
@@ -43,13 +44,14 @@ img {
 }
 
 a {
-	font-weight: 700;
-	color: #d14348;
+	font-weight: 400;
+	color: white;
+	text-decoration: none;
 }
 
 a:focus,
 a:hover {
-	text-decoration: none;
+	color: white;
 }
 
 em {
@@ -60,7 +62,7 @@ em {
 }
 
 section {
-	background-image: url("../images/gradient.jpg");
+	background-image: url("../images/gradient2.jpg");
 	background-repeat: repeat;
 	background-position: center center;
 	background-size: cover;
@@ -81,12 +83,13 @@ section {
 	justify-content: center;
 }
 
-section h2 {
+/* section h2 {
 	color: white;
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.3);
+
 	padding: 16px;
-	border-radius: 5px;
-}
+	border-radius: 3px;
+} */
 
 @media screen and (min-width: 600px) {
 	.header {
@@ -100,14 +103,13 @@ section h2 {
 		color: #fff;
 		max-width: 40em;
 		line-height: 140%;
-		font-size: 2.5rem;
+		font-size: 0.5rem;
 	}
 	.header .tagline h1 {
 		display: none;
 	}
 	.header .tagline em {
 		font-size: 140%;
-
 		font-style: normal;
 	}
 }
@@ -139,6 +141,39 @@ section h2 {
 	color: white;
 }
 
+select {
+	font-family: "Raleway", Helvetica, Arial, sans-serif;
+	width: 200px;
+	height: 30px;
+	color: #727272;
+	cursor: pointer;
+}
+
+footer {
+	font-size: 0.7em;
+	color: white;
+	padding-left: 8px;
+}
+
+.display-weather {
+}
+
 #icon {
 	padding: 5px;
+	text-align: center;
+}
+
+.weather-card {
+	display: flex;
+	align-items: left;
+	flex-direction: row;
+	max-width: 500px;
+	background: rgba(60, 62, 81, 0.2);
+	backdrop-filter: blur(5px);
+
+	margin: 20px 20px;
+	color: white;
+	padding: 16px;
+	border: rgba(60, 62, 81, 0.1) solid 1px;
+	border-radius: 5px;
 }
